@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------------------------------------
+   🌸 Amrita Doodle Background for All Pages
+   ------------------------------------------------------- */
+
+body {
+    @apply bg-gray-50 text-gray-900;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* Wrapper for the entire app (used in App.tsx) */
+
+.app-bg {
+    position: relative;
+    min-height: 100vh;
+    z-index: 0;
+}
+
+
+/* The doodle layer */
+
+.app-bg::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: #f9fafc;
+    background-image: url("/Amv.gif"), url("/Blr.gif"), url("/Cbe.gif"), url("/Chn.gif"), url("/Fbd.gif"), url("/Khi.gif"), url("/Mys.gif"), url("/1.gif");
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: 5% 10%, /* top left */
+    90% 10%, /* top right */
+    10% 40%, /* mid left */
+    80% 45%, /* mid right */
+    15% 80%, /* bottom left */
+    85% 80%, /* bottom right */
+    50% 90%, /* center bottom */
+    50% 40%;
+    /* center */
+    background-size: 280px, 280px, 240px, 240px, 220px, 220px, 300px, 260px;
+    opacity: 0.05;
+    /* 👈 light tone */
+    filter: contrast(90%) saturate(80%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* Ensure all app content sits above the doodle layer */
+
+.app-content {
+    position: relative;
+    z-index: 1;
+}

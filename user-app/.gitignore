@@ -1,0 +1,14 @@
+node_modules
+dist
+dist-ssr
+*.local
+
+# Local Netlify folder
+.netlify
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+.env
