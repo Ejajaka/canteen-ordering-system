@@ -2,7 +2,7 @@
 
 A digital ordering platform built for the college canteen — students order and pay from their phone, get a token instead of standing in line, and canteen staff get a live dashboard to manage the menu, orders, and daily sales.
 
-**Live demo (user app):** [YOUR_NETLIFY_URL_HERE](YOUR_NETLIFY_URL_HERE)
+**Live demo (user app):** https://marvelous-pie-031cc1.netlify.app/
 
 ## Why this exists
 
