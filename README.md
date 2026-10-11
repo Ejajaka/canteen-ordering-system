@@ -1,43 +1,61 @@
 # Amrita Canteen Tokenized Ordering System
 
-A digital ordering platform built for the college canteen — students order and pay from their phone, get a token instead of standing in line, and canteen staff get a live dashboard to manage the menu, orders, and daily sales.
+A digital ordering platform for the college canteen. Students order and pay from their phone and collect a token instead of standing in line, while canteen staff get a dashboard to manage the menu, orders, and daily sales.
 
-**Live demo (user app):** https://marvelous-pie-031cc1.netlify.app/
+**Live demo (student app):** https://marvelous-pie-031cc1.netlify.app/
 
-## Why this exists
+## Why two apps
 
-Busy canteen hours meant long queues, cash-handling delays, and no easy way for staff to see what was selling or track inventory. This project splits the problem into two apps that share the same Firebase backend: one for students to order, one for canteen staff to run the counter.
+Peak canteen hours meant long queues, cash handling, and no easy way for staff to see what was selling or to track inventory. The project splits the problem into two applications that share one Firebase backend: one for students to order, one for staff to run the counter.
 
-## Repo structure
+## Repository structure
 
 ```
 canteen-ordering-system/
-├── user-app/     — student-facing ordering app (this is what's deployed on Netlify)
-└── owner-app/    — canteen staff / admin dashboard
+├── user-app/     student-facing ordering app (the one deployed on Netlify)
+└── owner-app/    canteen staff / admin dashboard
 ```
 
-Each folder is a full standalone Vite app — see the README inside each for setup instructions.
+Each folder is a standalone Vite app. See the README inside each for its own setup notes.
 
 ## Tech stack
 
-- **Frontend:** React + TypeScript, Vite, Tailwind CSS
-- **Backend / Data:** Firebase (Firestore, Auth, Storage)
-- **Hosting:** Netlify (user app)
+- Frontend: React, TypeScript, Vite, Tailwind CSS
+- Backend and data: Firebase (Firestore, Auth, Storage)
+- Hosting: Netlify (student app)
 
 ## Features
 
-**Student app**
+Student app:
+
 - Browse the daily menu with photos, prices, and a favourites list
-- Add to cart and check out digitally — cart syncs across devices
-- Wallet-based payment (pre-load balance at the counter, spend cash-free)
+- Add to cart and check out digitally; the cart syncs across devices
+- Wallet-based payment, with balance loaded at the counter
 - Order history and profile management
 
-**Owner / staff dashboard**
+Owner / staff dashboard:
+
 - Add and manage menu items, with scheduling for availability
 - Live orders tab to track and fulfil incoming orders
 - Analytics tab for sales trends and popular items
 - Wallet management for student balances
 
+## Running locally
+
+Each app is independent:
+
+```bash
+cd user-app
+npm install
+npm run dev      # http://localhost:5000
+
+cd ../owner-app
+npm install
+npm run dev
+```
+
+Firebase configuration lives in `src/firebaseconfig.*` in each app. Add your own project settings there before running against a real backend.
+
 ## Status
 
-Built as a course project — the student-facing app is deployed and usable; the owner dashboard runs locally / can be deployed the same way via Netlify or Vercel.
+Built as a course project. The student-facing app is deployed and usable; the owner dashboard runs locally and can be deployed the same way through Netlify or Vercel.
